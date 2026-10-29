@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu amor ❤️🕷️</title>
+<style>
+  :root { --pink:#ff75b9; --hotpink:#ff3e9d; --red:#e92745; --ink:#171522; --white:#fff8fc; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0; color:var(--white); font-family:"Trebuchet MS",Arial,sans-serif;
+    background:radial-gradient(circle at 12% 10%,rgba(255,117,185,.22),transparent 26rem),
+      radial-gradient(circle at 90% 45%,rgba(233,39,69,.18),transparent 30rem),#111019;
+  }
+  .web { position:fixed; inset:0; pointer-events:none; opacity:.13; overflow:hidden; z-index:0; }
+  .web:before,.web:after { content:""; position:absolute; width:70vw; height:70vw; border:1px solid #ff8fc8; border-radius:50%; left:-20vw; top:-30vw; }
+  .web:after { width:95vw; height:95vw; left:auto; top:auto; right:-40vw; bottom:-40vw; }
+  header { min-height:90vh; display:grid; place-items:center; text-align:center; padding:35px 18px; position:relative; overflow:hidden; }
+  .hero { width:min(850px,100%); animation:appear 1s ease-out both; position:relative; z-index:1; }
+  .pill { display:inline-block; padding:8px 15px; border:1px solid rgba(255,117,185,.7); border-radius:99px; color:#ffc4e2; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; }
+  h1 { font-size:clamp(3rem,10vw,7rem); line-height:.9; margin:25px 0 16px; letter-spacing:-.06em; text-transform:uppercase; text-shadow:0 7px 30px #000; }
+  h1 .pink { color:var(--pink); }
+  .subtitle { color:#e8d9e2; font-size:clamp(1rem,3vw,1.25rem); }
+  .characters { display:flex; align-items:center; justify-content:center; gap:clamp(15px,5vw,50px); margin:25px auto 28px; }
+  .character { width:clamp(115px,29vw,205px); aspect-ratio:1; border-radius:28px; display:grid; place-items:center; background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.025)); border:1px solid rgba(255,255,255,.15); box-shadow:0 18px 45px #0005; }
+  .character svg { width:88%; height:88%; }
+  .heart { color:var(--hotpink); font-size:clamp(2rem,6vw,3.5rem); animation:pulse 1.5s infinite; }
+  .go,.photo-button { display:inline-block; padding:14px 23px; background:var(--hotpink); color:#fff; border:0; border-radius:999px; text-decoration:none; font-weight:bold; box-shadow:0 8px 25px #ff3e9d44; transition:transform .2s; cursor:pointer; font-size:1rem; font-family:inherit; }
+  .go:hover,.photo-button:hover { transform:translateY(-3px); }
+  main { width:min(850px,92vw); margin:-5px auto 65px; position:relative; z-index:1; }
+  .letter { background:rgba(28,24,36,.94); border:1px solid rgba(255,117,185,.42); border-radius:26px; overflow:hidden; box-shadow:0 25px 80px #0006; }
+  .letter-top { padding:22px 26px; background:linear-gradient(90deg,#ff75b9,#e92745); color:#fff; font-weight:bold; letter-spacing:.08em; text-transform:uppercase; }
+  .letter-body { padding:clamp(23px,6vw,52px); }
+  .letter h2 { margin:0 0 25px; font-size:clamp(1.5rem,5vw,2.3rem); color:#ff9bcc; }
+  .message { white-space:pre-line; font-size:clamp(1.05rem,2.8vw,1.22rem); line-height:1.9; color:#f8eaf2; }
+  .signoff { margin-top:32px; padding-top:24px; border-top:1px dashed #ff75b977; font-size:1.12rem; line-height:1.8; color:#ffc2e0; }
+  .signoff strong { color:#fff; }
+  .sticker-row { text-align:center; font-size:1.7rem; letter-spacing:.2em; padding:25px 10px 0; }
+  .memory { margin-top:30px; padding:25px; border:1px solid #ff75b977; border-radius:22px; text-align:center; background:linear-gradient(145deg,#2a172b,#21151f); }
+  .memory h3 { color:#ff9bcc; margin:0 0 10px; font-size:1.45rem; }
+  .memory p { color:#e8d9e2; line-height:1.65; margin:0 auto 18px; max-width:530px; }
+  .photo-hint { color:#c4b2c0; font-size:.88rem; margin-top:12px!important; }
+  .photo-frame { display:none; margin:22px auto 0; max-width:580px; position:relative; }
+  .photo-frame.show { display:block; animation:appear .45s ease-out both; }
+  .photo-frame img { display:block; width:100%; max-height:70vh; object-fit:contain; border-radius:18px; border:3px solid #ff9bcc; box-shadow:0 12px 40px #0007; background:#15111b; }
+  .photo-frame .caption { color:#ffc2e0; margin-top:12px; }
+  .heart-layer { position:fixed; inset:0; overflow:hidden; pointer-events:none; z-index:99; }
+  .floating-heart { position:absolute; bottom:-40px; animation:floatUp var(--duration,3.8s) ease-in forwards; font-size:var(--size,24px); filter:drop-shadow(0 0 8px #ff75b977); }
+  footer { text-align:center; padding:0 20px 35px; color:#b7a9b5; font-size:.82rem; position:relative; z-index:1; }
+  @keyframes pulse { 50% { transform:scale(1.15); } }
+  @keyframes appear { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes floatUp { 0% { transform:translateY(0) rotate(0deg) scale(.7); opacity:0; } 12% { opacity:1; } 85% { opacity:.9; } 100% { transform:translateY(-115vh) rotate(35deg) scale(1.25); opacity:0; } }
+  @media (prefers-reduced-motion:reduce) { *,*:before,*:after { animation:none!important; scroll-behavior:auto!important; } }
+</style>
+</head>
+<body>
+<div class="web" aria-hidden="true"></div>
+<div class="heart-layer" id="heartLayer" aria-hidden="true"></div>
+<header>
+  <div class="hero">
+    <div class="pill">Feito especialmente para você 💌</div>
+    <h1>Meu amor,<br><span class="pink">eu te amo!</span></h1>
+    <p class="subtitle">Um amor mais forte que qualquer universo. 🕷️🎀</p>
+    <div class="characters">
+      <div class="character" aria-label="Ilustração de uma máscara de herói aracnídeo">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Máscara vermelha de herói com teias">
+          <defs><linearGradient id="mask" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff5367"/><stop offset="1" stop-color="#b70d2a"/></linearGradient></defs>
+          <path d="M100 13 C54 13 28 46 34 100 C38 145 66 178 100 188 C134 178 162 145 166 100 C172 46 146 13 100 13Z" fill="url(#mask)" stroke="#ffb1bd" stroke-width="3"/>
+          <g fill="none" stroke="#720d23" stroke-width="2.5"><path d="M100 14V187 M39 62L161 139 M33 99L167 99 M45 143L155 55 M59 31L141 168 M141 31L59 168"/><path d="M44 52Q100 79 156 52 M35 78Q100 105 165 78 M38 123Q100 147 162 123 M55 154Q100 174 145 154"/></g>
+          <path d="M46 81 Q67 66 86 91 L79 110 Q58 109 46 81Z" fill="#fff" stroke="#15121a" stroke-width="5"/><path d="M154 81 Q133 66 114 91 L121 110 Q142 109 154 81Z" fill="#fff" stroke="#15121a" stroke-width="5"/>
+        </svg>
+      </div>
+      <div class="heart">♥</div>
+      <div class="character" aria-label="Ilustração de gatinha branca com laço rosa">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Gatinha branca com laço rosa">
+          <path d="M42 74L37 26Q36 15 48 23L81 47Q100 39 119 47L152 23Q164 15 163 26L158 74Q174 91 169 123Q164 165 100 174Q36 165 31 123Q26 91 42 74Z" fill="#fffafd" stroke="#f3bfd8" stroke-width="3"/>
+          <ellipse cx="69" cy="100" rx="8" ry="11" fill="#24202a"/><ellipse cx="131" cy="100" rx="8" ry="11" fill="#24202a"/><ellipse cx="100" cy="116" rx="5" ry="4" fill="#ff9bbf"/>
+          <path d="M100 120Q91 131 83 123 M100 120Q109 131 117 123" fill="none" stroke="#38303b" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M44 113L21 108 M44 123L20 124 M156 113L179 108 M156 123L180 124" stroke="#b7a5b2" stroke-width="2" stroke-linecap="round"/>
+          <path d="M108 48Q91 23 81 40Q75 53 98 63Q74 78 91 84Q104 88 111 66Q134 78 141 61Q146 43 121 47Q121 23 108 48Z" fill="#ff4c9d" stroke="#d91c70" stroke-width="3"/><circle cx="111" cy="62" r="5" fill="#ffbddb"/>
+        </svg>
+      </div>
+    </div>
+    <a class="go" href="#carta">Abrir minha cartinha 💗</a>
+  </div>
+</header>
+<main id="carta">
+  <article class="letter">
+    <div class="letter-top">💌 Uma carta do coração</div>
+    <div class="letter-body">
+      <h2>Meu amor, ❤️</h2>
+      <div class="message">Meu amor,eu te amo muito e não sei oque seria de mim sem vc, agradeço muito por ter vc pq sei que sem vc eu n teria motivos e nem razão para viver,eu só tenho a agradecer por vc,pq só eu sei oque vc faz e deixa de fazer na minha vida,e tambem o quanto vc me perdoou e me fez se sentir seguro independente do meus erros ou doq falaram de mim,um amor igual o meu por vc ninguém nunca vai saber como é,pq eu te amo de uma forma que nem esse texto n daria a metade da metade do meu amor por vc,mas nunca se esqueça meu amor,que eu estou aqui por vc por mim e por nós, lutando pro nosso relacionamento dar certo,e eu te assumir e fazer vc o homem mais feliz dessa terra,e fazer com que os outros homens tenham inveja de olhar pra vc e ver o quão amado de verdade vc é meu amor,eu te amo muito muito muito muito muito muito muito msm.
+
+É obrigada por ser quem vc é e sempre cuidar de mim do jeitinho que vc cuida com amor e carinho msm qnd tô muito irritada com vc ou de TPM, obrigada por saber quando agir e como me tratar, obrigada por ser quem vc é,pq vc é a pessoa mais especial dessa vida pra mim,e independente doq acontecer sempre vai ser e eu vou te amar nessa e nas outras vidas.</div>
+      <div class="signoff">da futura mamãe do seus filhos,beijo amor<br><strong>E n se esqueça que eu te amo como o homem aranha amou sua amada em todos os universos ❤️🕷️</strong></div>
+      <div class="sticker-row">🕷️ 💗 🎀 💗 🕷️</div>
+      <section class="memory">
+        <h3>📸 Para se lembrar de nós</h3>
+        <p>Guarde aqui uma foto especial de vocês. Quando abrir, coraçõezinhos vão aparecer na tela! 💗</p>
+        <label class="photo-button" for="ourPhoto">Escolher nossa foto 💞</label>
+        <input id="ourPhoto" type="file" accept="image/*" hidden>
+        <div class="photo-frame" id="photoFrame">
+          <img id="photoPreview" alt="Foto especial de vocês">
+          <div class="caption">Uma lembrança nossa, guardada com amor. 💖</div>
+        </div>
+        <p class="photo-hint">Dica: escolha uma foto salva no seu celular. A foto aparece neste navegador enquanto a página estiver aberta.</p>
+      </section>
+    </div>
+  </article>
+</main>
+<footer>Feito com muito amor, para uma pessoa muito especial. 💞</footer>
+<script>
+  const input = document.getElementById('ourPhoto');
+  const frame = document.getElementById('photoFrame');
+  const preview = document.getElementById('photoPreview');
+  const layer = document.getElementById('heartLayer');
+  let currentUrl = null;
+
+  function showerHearts() {
+    const symbols = ['💗','💖','💕','❤️','💘','💞','🩷'];
+    for (let i = 0; i < 34; i++) {
+      const heart = document.createElement('span');
+      heart.className = 'floating-heart';
+      heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      heart.style.left = (Math.random() * 100) + 'vw';
+      heart.style.setProperty('--size', (18 + Math.random() * 24) + 'px');
+      heart.style.setProperty('--duration', (2.7 + Math.random() * 2.2) + 's');
+      heart.style.animationDelay = (Math.random() * .8) + 's';
+      layer.appendChild(heart);
+      heart.addEventListener('animationend', () => heart.remove(), { once: true });
+    }
+  }
+
+  input.addEventListener('change', () => {
+    const file = input.files && input.files[0];
+    if (!file) return;
+    if (currentUrl) URL.revokeObjectURL(currentUrl);
+    currentUrl = URL.createObjectURL(file);
+    preview.src = currentUrl;
+    frame.classList.add('show');
+    showerHearts();
+  });
+</script>
+</body>
+</html>
